@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'scrapper/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'scrapper#index'
+  resources :products, only: [:index, :show, :new, :create] do
+    match '/scrape', to 'products#scrape', via: :post,
+      on: :collection
+  end
+
+  root to: 'products#new'
 end
