@@ -1,6 +1,6 @@
-class ProductsSpider < Kimurai::Base
+class ProductSpider < Kimurai::Base
 
-  @name = 'products_spider'
+  @name = 'product_spider'
   @engine = :mechanize
 
   def self.process(url)
@@ -10,3 +10,8 @@ class ProductsSpider < Kimurai::Base
 
   def parse(response, url:, data: {})
     response.xpath("//div[@class='shop-srp-listings_listing-']")
+    item = {}
+  end
+end
+
+
