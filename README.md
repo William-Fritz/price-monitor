@@ -1,5 +1,6 @@
 # Price-Monitor
-Price Monitor app to monitor Fabelio products link
+Price Monitor app to monitor Fabelio products:
+https://price-monitor-scrapy.herokuapp.com/
 
 ## Dependencies:
 - Postgresql
