@@ -17,8 +17,12 @@
 
 <p>
   <strong>Images:</strong>
-  <%= @product.images %>
+  <%= image_tag @product.image_url %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<p>
+  <strong>Url:</strong>
+  <%= @product.url %>
+</p>
+
 <%= link_to 'Back', products_path %>

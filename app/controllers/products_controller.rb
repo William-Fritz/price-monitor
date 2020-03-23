@@ -26,8 +26,7 @@ class ProductsController < ApplicationController
   def create
     
     response = scrape(params[:product][:url])
-    byebug
-    @product = Product.new(params[response])
+    @product = Product.new(response)
 
     respond_to do |format|
       if @product.save
@@ -43,13 +42,6 @@ class ProductsController < ApplicationController
   def scrape(link)
     url = link
     response = ProductSpider.process(url)
-    if response[:status] == :completed && response[:error].nil?
-      flash[:notice] = "Successfully scraped url"
-    else
-      flash[:alert] = response[:error]
-    end
-  rescue StandardError => e
-    flash[:alert] = "Error: #{e}"
   end
 
 
