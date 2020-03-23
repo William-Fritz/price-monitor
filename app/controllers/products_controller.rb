@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
     
     response = scrape(product_params[:url])
 
-    @product = Product.new(product_params)
+    # @product = Product.new(product_params)
 
     respond_to do |format|
       if @product.save
@@ -62,6 +62,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.permit(:url)
+      params.require[:product].permit(:url)
     end
 end
