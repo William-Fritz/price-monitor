@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Current price</th>
+      <th>Description</th>
+      <th>Images</th>
+      <th>Url</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.current_price %></td>
+        <td><%= product.description %></td>
+        <td><%= image_tag product.image_url %></td>
+        <td><%= product.url %></td>
+        <td><%= link_to 'Show', product %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
