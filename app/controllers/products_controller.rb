@@ -24,11 +24,10 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    byebug
     
-    response = scrape(product_params[:url])
-
-    # @product = Product.new(product_params)
+    response = scrape(params[:product][:url])
+    byebug
+    @product = Product.new(params[response])
 
     respond_to do |format|
       if @product.save
@@ -45,7 +44,7 @@ class ProductsController < ApplicationController
     url = link
     response = ProductSpider.process(url)
     if response[:status] == :completed && response[:error].nil?
-      flash[:notice] = "Succesfully scraped url"
+      flash[:notice] = "Successfully scraped url"
     else
       flash[:alert] = response[:error]
     end
