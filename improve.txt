@@ -1,0 +1,8 @@
+
+- known bugs: give other links = does nothing
+- error handling
+- unit test
+- integration test
+- docker compose for development purpose
+- beautification
+- doesn't allow duplicate links
