@@ -9,7 +9,7 @@ Price Monitor app to monitor Fabelio products link
 
 ## Clone the files:
 ```sh
-  $ git clone https://github.com/William-Fritz/price-monitor.git
+  $ git clone git@github.com:William-Fritz/price-monitor.git
 ```
 ## Install Ruby ver 2.6.5 from official web
 **https://www.ruby-lang.org/en/downloads/**
