@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show]
 
   # GET /products
   # GET /products.json
@@ -17,17 +17,11 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  # GET /products/1/edit
-  def edit
-  end
-
   # POST /products
   # POST /products.json
   def create
-    
-    response = scrape(params[:product][:url])
-    @product = Product.new(response)
-
+    result = scrape(params[:product][:url])
+    @product = Product.new(result)
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -41,18 +35,18 @@ class ProductsController < ApplicationController
 
   def scrape(link)
     url = link
-    response = ProductSpider.process(url)
+    ProductSpider.process(url)
   end
 
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require[:product].permit(:url)
-    end
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require[:product].permit(:url)
+  end
 end
+

@@ -10,5 +10,5 @@ class ChangeProductTable < ActiveRecord::Migration[6.0]
     add_column :products, :images, :string
     remove_column :products, :url, :string
   end
-
 end
+
