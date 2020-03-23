@@ -22,6 +22,10 @@ Price Monitor app to monitor Fabelio products link
 ```sh
   $ bundle install
 ```
+## Create database
+```sh
+  $ rails db:create
+```
 ## Run database migration
 ```sh
   $ rails db:migrate
