@@ -8,6 +8,7 @@ https://price-monitor-scrapy.herokuapp.com/
 ## Improvements Note:
 **Things to improve going forward**
 - Website beautification
+- Implement heroku scheduler for hourly price update
 - Handling known bugs: 
   - non fabelio product link will post product with 0 as values,
   - invalid links will throw and error and stop the application,
