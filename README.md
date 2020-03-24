@@ -5,6 +5,15 @@ https://price-monitor-scrapy.herokuapp.com/
 ## Dependencies:
 - Postgresql
 - Ruby on Rails
+## Improvements Note:
+**Things to improve going forward**
+- Website beautification
+- Handling known bugs: 
+  - non fabelio product link will post product with 0 as values,
+  - invalid links will throw and error and stop the application,
+  - duplicated links will throw and error dupplicate not allowed
+- Error handling: give proper error message when application stop running
+- Docker compose for development purpose
 
 ## To Start the App:
 
