@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-  validates_presence_of :name
-  validates_presence_of :current_price
-  validates_presence_of :url
+  validates :name, presence: true, uniqueness: true
+  validates :url, presence: true, uniqueness: true
+  validates :current_price, presence: true
 end
 

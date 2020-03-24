@@ -27,5 +27,13 @@ RSpec.describe Product, type: :model do
     subject.url = nil
     expect(subject).to_not be_valid
   end
+
+  it "should validate uniqueness of name" do
+    expect(subject).to validate_uniqueness_of(:name)
+  end
+
+  it "should validate uniqueness of url" do
+    expect(subject).to validate_uniqueness_of(:url)
+  end
 end
 
